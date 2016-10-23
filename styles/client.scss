@@ -1,4 +1,59 @@
+$header-color: white;
+$header-black: rgb(50, 50, 50);
 
-body {
-  background: rgb(91, 91, 91);
+body,
+html {
+  height: 100%;
+  margin: 0;
+}
+
+.page {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.banner {
+  flex: 1 1 auto;
+  background: #ffd89b; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #ffd89b , #19547b); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #ffd89b , #19547b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.header-nav {
+  flex: 0 1 auto;
+  // background: #ffd89b; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to righ, #ffd89b , #19547b); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to right, #ffd89b , #19547b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: $header-black;
+  padding: 10px 0;
+  // min-height: 500px;
+}
+
+.header-button {
+  display: inline-block;
+  margin: 10px;
+}
+
+.header-nav .header-button a {
+  cursor: pointer;
+  position: relative;
+  border: solid 2px $header-color;
+  padding: 10px 20px;
+  color: $header-color;
+  font-size: 20px;
+  font-weight: 400;
+  text-decoration: none !important;
+  &:active {
+    top: 2px;
+    left: 1px;
+  }
+  &:hover {
+    background: rgba(0,0,0,0.2);
+  }
+}
+
+.footer {
+  flex: 0 1 120px;
+  background: $header-black;
 }
