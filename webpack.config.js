@@ -47,11 +47,11 @@ module.exports = {
                 // these are loaders for fonts, graphics and other such things (including font-awesome)
                 test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
                 // the name param tells the css where to find the text files on the server, so put your public folder
-                loader: "url?name=./public/[name].[ext]&limit=10000&mimetype=application/font-woff"
+                loader: "url?name=./fonts_imgs/[name].[ext]&limit=10000&mimetype=application/font-woff"
             },
             {
                 test: /\.(ttf|eot|svg)(\?v=[0-9]\.[0-9]\.[0-9])?$/,
-                loader: "file?name=./public/[name].[ext]"
+                loader: "file?name=./fonts_imgs/[name].[ext]"
             },
             {
               test: /\.json$/,
@@ -73,8 +73,8 @@ module.exports = {
     resolve: {
         extensions: ["", ".js", ".jsx", ".es6", ".txt"],
         alias: {
-            "yw-scripts": SCRIPTS_ROOT,
-            "yw-styles": STYLES_ROOT,
+            "pw-scripts": SCRIPTS_ROOT,
+            "pw-styles": STYLES_ROOT,
             // here we can include specific mappings which tell webpack where to look if a module doesn't default export something we want. We do this with
             // "bootstrap$": "bootstrap/dist/js/bootstrap.min",
             "debug$": "debug/browser"

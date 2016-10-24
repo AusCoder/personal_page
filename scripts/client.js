@@ -1,6 +1,8 @@
 /* global document, DEBUG */
-import 'yw-scripts/debug_config';
-import 'yw-styles';
+import 'pw-scripts/debug_config';
+import 'pw-styles';
+
+import 'pw-scripts/brownian_motions/brownian2d';
 
 import $ from 'jquery';
 
