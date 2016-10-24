@@ -13,13 +13,6 @@ html {
   height: 100%;
 }
 
-.main {
-  flex: 1 1 auto;
-  // background: #ffd89b; /* fallback for old browsers */
-  // background: -webkit-linear-gradient(to left, #ffd89b , #19547b); /* Chrome 10-25, Safari 5.1-6 */
-  // background: linear-gradient(to left, #ffd89b , #19547b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
 .header-nav {
   flex: 0 1 auto;
   // background: #ffd89b; /* fallback for old browsers */
@@ -51,6 +44,22 @@ html {
   &:hover {
     background: rgba(0,0,0,0.2);
   }
+}
+
+.main {
+  flex: 1 1 auto;
+  // background: #ffd89b; /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to left, #ffd89b , #19547b); /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to left, #ffd89b , #19547b); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.main .main-content {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 20px;
+}
+
+#brownian2d {
+  position: absolute;
 }
 
 .footer {

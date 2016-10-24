@@ -1,13 +1,17 @@
 import * as d3 from 'd3';
+import $ from 'jquery';
 
-var w = 500;
-var h = 300;
-var N = 10000;
+var mainHeight = $('.main').height();
+var mainWidth = $('.main').width();
+
+var w = mainWidth;
+var h = mainHeight;
+var N = 1000;
 var runX1 = w/2;
 var runX2 = w/2;
 var runY1 = h/2;
 var runY2 = h/2;
-var stepSize = 4;
+var stepSize = 10;
 
 var scaleY = d3.scaleLinear().domain([-1,1]).range([-stepSize, stepSize]);
 var scaleX = d3.scaleLinear().domain([-1,1]).range([-stepSize, stepSize]);
@@ -47,5 +51,5 @@ lines.attr("x1", function(d, i) {
     return runY2;
   })
   .attr("stroke", function(d,i) {
-    return "rgb(0,0,0)"
+    return "rgba(0,0,0,0.2)"
   });
