@@ -4,12 +4,21 @@
 var DEBUG = process.env.DEBUG;
 var webpack = require('webpack');
 var path = require('path');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 
 // path.resolve concats its string arguments together to form an absolute path,
 // if left most string is not absolute, it uses the cwd of where the script was run
 var SCRIPTS_ROOT = path.resolve(__dirname, "./scripts");
 var STYLES_ROOT = path.resolve(__dirname, "./styles");
+
+function cssLoaders(extra) {
+	return ExtractTextPlugin.extract('style', [
+		'css?sourceMap'
+  ]
+	.concat(extra || [])
+	.join('!'));
+}
 
 module.exports = {
     context: __dirname,
@@ -36,12 +45,17 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/,
-                // these are style-loader, css-loader and sass-loader
-                // you might have to use
-                // require(!style!css!sass!./path/to/stylesheet)
-                // when importing (the !s are like pipes)
-                loaders: [ 'style', 'css?sourceMap', 'sass?sourceMap' ]
+              test: /\.css$/,
+              // these are style-loader, css-loader and sass-loader
+              // you might have to use
+              // require(!style!css!sass!./path/to/stylesheet)
+              // when importing (the !s are like pipes)
+              loader: [ 'style', 'css?sourceMap', 'sass?sourceMap' ]
+              // loaders: cssLoaders()
+            },
+            {
+              test: /\.scss$/,
+              loader: ExtractTextPlugin.extract("style-loader", "css-loader!sass-loader")
             },
             {
                 // these are loaders for fonts, graphics and other such things (including font-awesome)
@@ -86,6 +100,9 @@ module.exports = {
             React: "react",
             $: "jquery",
             jQuery: "jquery"
+        }),
+        new ExtractTextPlugin("style.css", {
+            allChunks: true
         })
     ].concat(DEBUG
         ? []
