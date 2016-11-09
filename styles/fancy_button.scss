@@ -14,6 +14,7 @@ $header-color: white;
   font-weight: 400;
   text-decoration: none !important;
   &:hover {
+    text-decoration: none !important;
     .fhb__line {
       transform: none;
     }
@@ -21,6 +22,10 @@ $header-color: white;
   a {
     text-decoration: none !important;
     color: $header-color;
+    &:hover {
+      color: $header-color;
+      text-decoration: none !important;
+    }
   }
 }
 

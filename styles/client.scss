@@ -1,6 +1,8 @@
 $header-color: white;
 $header-black: rgb(50, 50, 50);
 
+@import './fancy_button';
+
 body,
 html {
   height: 100%;
