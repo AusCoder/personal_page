@@ -10,6 +10,7 @@ var app = express();
 // Middleware
 // =======================
 app.use("/public", express.static(__dirname + "/public"));
+app.use("/assets", express.static(__dirname + "/assets"));
 
 app.use(helmet.xssFilter());
 app.use(helmet.frameguard());
@@ -28,6 +29,9 @@ app.disable("x-powered-by");
 // =======================
 app.get("/", function (req, res) {
 	res.render('home', { title: 'Home' });
+});
+app.get("/rand", function (req, res) {
+	res.render('random', { title: 'Random' });
 });
 
 // =======================

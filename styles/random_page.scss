@@ -1,0 +1,102 @@
+$pink: #FE4365;
+$light-pink: #FC9D9A;
+$cream: #F9CDAD;
+$cream-green: #C8C8A9;
+$pale-green: #83AF9B;
+
+html, body {
+  height: 100% !important;
+  color: rgb(50, 50, 50);
+}
+
+.wrapper {
+  height: 100%;
+}
+
+.header {
+  height: 66%;
+  .header-skew {
+    width: 100%;
+    height: 720px;
+    overflow: hidden;
+    position: absolute;
+    background: linear-gradient(90deg, $pink, $cream);
+
+    -ms-transform: skewY(-10deg); /* IE 9 */
+    -ms-transform-origin: 0; /* IE 9 */
+    -webkit-transform: skewY(-10deg); /* Chrome, Safari, Opera */
+    -webkit-transform-origin: 0; /* Chrome, Safari, Opera */
+    transform: skewY(-10deg);
+    transform-origin: 0;
+
+    z-index: 100;
+    span {
+      width: 30%;
+      height: 200px;
+      position: absolute;
+      &:nth-child(1) {
+        background: linear-gradient(90deg, $pink, $cream-green);
+        height: 300px;
+        top: 0;
+        left: 0;
+      }
+      &:nth-child(2) {
+        background: linear-gradient(90deg, $cream-green, $pale-green);
+        height: 300px;
+        top: 0;
+        left: 33%;
+      }
+      &:nth-child(3) {
+        background: linear-gradient(90deg, $pale-green, $cream);
+        height: 300px;
+        top: 0;
+        left: 66%;
+        width: 33%;
+      }
+      &:nth-child(4) {
+        background: linear-gradient(90deg, $pink, $cream-green);
+        height: 300px;
+        bottom: 0;
+        left: 0;
+      }
+    }
+  }
+  .header2-skew {
+    width: 100%;
+    height: 720px;
+    overflow: hidden;
+    position: absolute;
+    z-index: 99;
+    top: 0;
+    background: linear-gradient(320deg, white, grey);
+  }
+  #intro {
+    position: relative;
+    z-index: 200;
+  }
+}
+
+#intro .title {
+  margin-left: 45%;
+  margin-top: 320px;
+}
+
+.mid-pics {
+  margin: 60px 0;
+  margin-top: 34%;
+}
+
+.pic-container {
+  border: 1px solid $cream-green;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 15px 35px rgba(50,50,93,.1),0 5px 15px rgba(0,0,0,.07);
+  img {
+    width: 100%;
+  }
+}
+
+.footer {
+  height: 180px;
+  background: grey;
+}
